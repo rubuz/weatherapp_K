@@ -9,6 +9,7 @@ const useWeather = (city: string) => {
     if (!city) return;
 
     const fetchWeather = async () => {
+      setError(null);
       const weather_url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${
         import.meta.env.VITE_OPENWEATHER_API
       }&units=metric`;

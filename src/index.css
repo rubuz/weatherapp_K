@@ -6,4 +6,8 @@
   .weather-info-mini {
     @apply flex flex-col items-center justify-center;
   }
+
+  .error-msg {
+    @apply justify-start w-full mt-1 pl-4 text-sm text-red-500 italic;
+  }
 }

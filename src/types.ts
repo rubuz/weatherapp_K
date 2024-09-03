@@ -12,3 +12,13 @@ export interface CityCardProps {
   weatherData: WeatherData;
   onClick: (cityName: string) => void;
 }
+
+export interface SearchBarProps {
+  inputValue: string;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleKeyPress: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  handleSearch: () => void;
+  setInputValue: (value: string) => void;
+  error: Error | null;
+  emptyError: boolean;
+}
