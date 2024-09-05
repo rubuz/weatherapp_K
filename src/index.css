@@ -7,6 +7,14 @@
     @apply flex flex-col items-center justify-center;
   }
 
+  .weather-info-mini-number {
+    @apply text-lg font-semibold;
+  }
+
+  .weather-info-mini-text {
+    @apply text-xs text-slate-300;
+  }
+
   .error-msg {
     @apply justify-start w-full mt-1 pl-4 text-sm text-red-500 italic;
   }

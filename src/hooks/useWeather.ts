@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+
 import { WeatherData } from "../types";
 
 const useWeather = (city: string) => {
@@ -8,6 +9,7 @@ const useWeather = (city: string) => {
   useEffect(() => {
     if (!city) return;
 
+    // API call to fetch weather data and extract the required data
     const fetchWeather = async () => {
       setError(null);
       const weather_url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${
@@ -25,6 +27,7 @@ const useWeather = (city: string) => {
         const { temp, feels_like, temp_max, temp_min, humidity } = data.main;
         const name = data.name;
         const icon = data.weather[0].icon;
+
         setWeatherData({
           temp,
           feels_like,
@@ -39,9 +42,8 @@ const useWeather = (city: string) => {
         setError(
           error instanceof Error
             ? error
-            : new Error("An unknown error occurred")
+            : new Error("An unknown error occurred"),
         );
-        console.log("gre cez error");
       }
     };
 

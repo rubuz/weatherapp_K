@@ -1,4 +1,5 @@
 import { IoSearch } from "react-icons/io5";
+
 import { SearchBarProps } from "../types";
 
 const SearchBar = ({
@@ -12,22 +13,24 @@ const SearchBar = ({
 }: SearchBarProps) => {
   return (
     <>
-      <div className="w-full flex items-center justify-between gap-2 relative">
+      <div className="relative flex w-full items-center justify-between gap-2">
         <input
           type="text"
           name="city"
           placeholder="Search for a city"
-          className="rounded-2xl w-full h-10 px-4 text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-apricot shadow-sm placeholder:font-normal placeholder-slate-300"
+          className="h-10 w-full rounded-2xl px-4 text-xl font-semibold placeholder-slate-300 shadow-sm placeholder:font-normal focus:outline-none focus:ring-2 focus:ring-apricot"
           value={inputValue}
           onChange={handleChange}
           onKeyDown={handleKeyPress}
           onClick={() => setInputValue("")}
         />
         <IoSearch
-          className="absolute z-20 right-0 h-10 w-10 bg-transparent p-2 rounded-full hover:text-violet transition-all duration-100 hover:cursor-pointer"
+          className="absolute right-0 z-20 h-10 w-10 rounded-full bg-transparent p-2 transition-all duration-100 hover:cursor-pointer hover:text-violet"
           onClick={handleSearch}
         />
       </div>
+
+      {/* ERROR */}
       {emptyError ? (
         <p className="error-msg">Field must not be empty</p>
       ) : error ? (
