@@ -56,7 +56,7 @@ function App() {
         {/* CARD LIST */}
         <div className="w-full">
           {cities.map((city, index) => (
-            <div className="mb-1 rounded-lg bg-violet shadow-md transition-all duration-100 first-of-type:mt-4 first-of-type:rounded-t-2xl last-of-type:mb-0 last-of-type:rounded-b-2xl hover:scale-[102%] hover:cursor-pointer active:scale-95">
+            <div className="mb-1 rounded-lg bg-violet shadow-md transition-all duration-100 first-of-type:mt-4 first-of-type:rounded-t-2xl last-of-type:mb-0 last-of-type:rounded-b-2xl hover:cursor-pointer active:scale-95 sm:hover:scale-[102%]">
               <CityCard
                 key={index}
                 weatherData={city.weatherData}

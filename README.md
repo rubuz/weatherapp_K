@@ -1,50 +1,93 @@
-# React + TypeScript + Vite
+# Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Weather App is a SPA (Single-Page Application) built with React. It allows users to search for weather information in different cities and displays the current weather conditions for the selected cities.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Features](#features)
+- [Built with](#built-with)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Contact](#contact)
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Search for weather information by city name.
+- Display current temperature, "feels like" temperature, minimum and maximum temperatures, humidity, and weather icons.
+- Display weather information for up to 5 cities.
+- Click on a city card to refresh the information and move the updated card to the top of the list.
+- Show an error message for invalid or empty input.
 
-- Configure the top-level `parserOptions` property like this:
+## Built with
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- React
+- Typescript
+- Vite
+- TailwindCSS
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm installed on your machine
+- An [OpenWeather](https://openweathermap.org/api) account and an API key
+
+### Installation
+
+1. Clone the repository:
+
+```
+git clone https://github.com/rubuz/weatherapp_K.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Install the dependencies:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
+npm install
+```
+
+3. Create a **.env.local** file in the root directory and add your **OpenWeather API key**:
+
+```
+VITE_OPENWEATHER_API=your_openweather_api_key
+```
+
+## Usage
+
+### Development
+
+To start the development server, run:
+
+```
+npm run dev
+```
+
+This will start the Vite development server and open the application in your default browser.
+
+### Build
+
+To build the project for production, run:
+
+```
+npm run build
+```
+
+This will create a **dist** directory with the production build of the application.
+
+### Preview
+
+To preview the production build, run:
+
+```
+npm run preview
+```
+
+This will start a local server to preview the production build.
+
+## Contact
+
+Matjaž - rubuz23@gmail.com
+
+Project link: [GitHub Repository](https://github.com/rubuz/weatherapp_K.git)
+
+Live demo: [WeatherAPP](https://weatherapp-k.vercel.app/)
