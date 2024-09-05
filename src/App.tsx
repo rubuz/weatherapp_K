@@ -4,14 +4,16 @@ import { WeatherData } from "./types";
 import CityCard from "./components/CityCard";
 import { IoSearch } from "react-icons/io5";
 import SearchBar from "./components/SearchBar";
+import useCityManager from "./hooks/useCityManager";
 
 function App() {
   const [city, setCity] = useState("");
   const [inputValue, setInputValue] = useState("");
-  const [cities, setCities] = useState<{ weatherData: WeatherData }[]>([]);
+  // const [cities, setCities] = useState<{ weatherData: WeatherData }[]>([]);
   const [emptyError, setEmptyError] = useState(false);
 
   const { weatherData, error } = useWeather(city);
+  const { cities } = useCityManager(weatherData, city, setCity);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmptyError(false);
@@ -32,27 +34,27 @@ function App() {
     }
   };
 
-  const addCity = (weatherData: WeatherData) => {
-    setCities((prevCities) => {
-      const newCities = [{ weatherData }, ...prevCities];
-      if (newCities.length > 5) {
-        newCities.pop();
-      }
-      return newCities;
-    });
-    setCity("");
-  };
-
   const handleCityClick = (cityName: string) => {
     setCity(cityName);
     setInputValue(cityName);
   };
 
-  useEffect(() => {
-    if (weatherData && city) {
-      addCity(weatherData);
-    }
-  }, [weatherData]);
+  // const addCity = (weatherData: WeatherData) => {
+  //   setCities((prevCities) => {
+  //     const newCities = [{ weatherData }, ...prevCities];
+  //     if (newCities.length > 5) {
+  //       newCities.pop();
+  //     }
+  //     return newCities;
+  //   });
+  //   setCity("");
+  // };
+
+  // useEffect(() => {
+  //   if (weatherData && city) {
+  //     addCity(weatherData);
+  //   }
+  // }, [weatherData]);
 
   return (
     <>
