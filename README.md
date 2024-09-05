@@ -2,6 +2,8 @@
 
 The Weather App is a SPA (Single-Page Application) built with React. It allows users to search for weather information in different cities and displays the current weather conditions for the selected cities.
 
+![screenshot of an app](https://ibb.co/8rTVJhC)
+
 ## Table of Contents
 
 - [Features](#features)
@@ -29,7 +31,7 @@ The Weather App is a SPA (Single-Page Application) built with React. It allows u
 
 ### Prerequisites
 
-- Node.js and npm installed on your machine
+- [Node.js](https://nodejs.org/en) and npm installed on your machine
 - An [OpenWeather](https://openweathermap.org/api) account and an API key
 
 ### Installation
