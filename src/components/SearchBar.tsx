@@ -16,7 +16,8 @@ const SearchBar = ({
         <input
           type="text"
           name="city"
-          className="rounded-2xl w-full h-10 px-4 text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-apricot shadow-sm"
+          placeholder="Search for a city"
+          className="rounded-2xl w-full h-10 px-4 text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-apricot shadow-sm placeholder:font-normal placeholder-slate-300"
           value={inputValue}
           onChange={handleChange}
           onKeyDown={handleKeyPress}
