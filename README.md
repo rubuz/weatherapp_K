@@ -2,7 +2,7 @@
 
 The Weather App is a SPA (Single-Page Application) built with React. It allows users to search for weather information in different cities and displays the current weather conditions for the selected cities.
 
-![screenshot of an app](https://ibb.co/8rTVJhC)
+![screenshot of an app](https://i.ibb.co/GWBjXh6/weatherapp.png)
 
 ## Table of Contents
 
