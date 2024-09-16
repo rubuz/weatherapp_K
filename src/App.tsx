@@ -5,6 +5,7 @@ import SearchBar from "./components/SearchBar";
 
 import useCityManager from "./hooks/useCityManager";
 import useWeather from "./hooks/useWeather";
+import useGeoLocation from "./hooks/useGeoLocation";
 
 function App() {
   const [city, setCity] = useState<string>("");
@@ -13,6 +14,7 @@ function App() {
 
   const { weatherData, error } = useWeather(city);
   const { cities } = useCityManager(weatherData, city, setCity);
+  const { currentLocationWeather, errorGeo } = useGeoLocation();
 
   // HZANDLER FUNCTIONS
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -42,7 +44,18 @@ function App() {
   return (
     <>
       <h1 className="my-4 text-center text-3xl font-bold">Weather APP</h1>
+
       <div className="mx-auto my-4 flex w-[95%] flex-col items-center justify-center rounded-3xl bg-light-violet p-4 shadow-md sm:w-[450px]">
+        <div className="mb-4 w-full rounded-2xl bg-purple-400 shadow-md transition-all duration-100">
+          {currentLocationWeather ? (
+            <CityCard
+              weatherData={currentLocationWeather}
+              onClick={handleCityClick}
+            />
+          ) : errorGeo ? (
+            <p className="error-msg">{errorGeo.message}</p>
+          ) : null}
+        </div>
         <SearchBar
           inputValue={inputValue}
           handleChange={handleChange}

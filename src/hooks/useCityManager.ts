@@ -7,7 +7,11 @@ const useCityManager = (
   city: string,
   setCity: (value: string) => void,
 ) => {
-  const [cities, setCities] = useState<{ weatherData: WeatherData }[]>([]);
+  const [cities, setCities] = useState<{ weatherData: WeatherData }[]>(() => {
+    // Intialize state fron local storage
+    const savedCities = localStorage.getItem("cityHistory");
+    return savedCities ? JSON.parse(savedCities) : [];
+  });
 
   // Add city to the list/array - check the length of the list, remove the last city if it exceeds 5
   const addCity = (weatherData: WeatherData) => {
@@ -16,6 +20,8 @@ const useCityManager = (
       if (newCities.length > 5) {
         newCities.pop();
       }
+      // Save to local storage
+      localStorage.setItem("cityHistory", JSON.stringify(newCities));
       return newCities;
     });
     setCity("");

@@ -8,7 +8,13 @@ export interface WeatherData {
   icon: string;
 }
 
+export interface currentLocationWeather {
+  currentLocationWeather: WeatherData | null;
+  errorGeo: Error | null;
+}
+
 export interface CityCardProps {
+  currentLocationWeather?: WeatherData | null;
   weatherData: WeatherData;
   onClick: (cityName: string) => void;
 }
